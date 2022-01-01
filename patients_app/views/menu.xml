@@ -1,0 +1,20 @@
+<odoo>
+  <data>
+    
+    <!-- Top menu item -->
+
+    <menuitem name="patients_app" id="patients_app.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Patients" id="patients_app.menu_patients" parent="patients_app.menu_root"/>
+    <menuitem name="Visits" id="patients_app.menu_visits" parent="patients_app.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Patients" id="patients_app.menu_patients_list" parent="patients_app.menu_root"
+              action="patients_app.action_window_patient"/>
+    <menuitem name="Visits" id="patients_app.menu_visits_list" parent="patients_app.menu_root"
+              action="patients_app.action_window_visits"/>-->
+  </data>
+</odoo>

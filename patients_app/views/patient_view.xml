@@ -1,0 +1,108 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="patients_app.patient_model_form">
+      <field name="name">Patients Form</field>
+      <field name="model">patients_app.patient_model</field>
+      <field name="arch" type="xml">
+        <form string="Patients">
+          <header>
+
+            <!-- Botones aquí -->
+           
+
+          </header>
+          <sheet>
+          <group>
+              <group name="left">
+                <field name="dni"/>
+                <field name="name"/>
+                <field name="surname"/>
+                <field name="phone"/>
+                <field name="date"/>
+                <field name="email"/>
+                
+              </group>
+            
+            <group name="right">
+              <field name="photo"/>
+              
+              
+            </group>
+
+            
+          </group>
+          <group name="down">
+            <field name="visit"/>
+            
+            
+          </group>
+          
+        </sheet>
+        </form>
+      </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="patients_app.patient_model_list">
+      <field name="name">Patient List</field>
+      <field name="model">patients_app.patient_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="dni"/>
+          <field name="name"/>
+          <field name="surname"/>
+          <field name="phone"/>
+          <field name="date"/>
+          <field name="email"/>
+          
+          
+        </tree>
+      </field>
+    </record>
+
+
+     <!--actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="patients_app.action_window_patient">
+      <field name="name">Patient Window</field>
+      <field name="res_model">patients_app.patient_model</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+     <!--server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="patients_app.action_server">
+      <field name="name">patients_app server</field>
+      <field name="model_id" ref="model_patients_app_patients_app"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="patients_app" id="patients_app.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="patients_app.menu_1" parent="patients_app.menu_root"/>
+    <menuitem name="Menu 2" id="patients_app.menu_2" parent="patients_app.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="patients_app.menu_1_list" parent="patients_app.menu_1"
+              action="patients_app.action_window"/>
+    <menuitem name="Server to list" id="patients_app" parent="patients_app.menu_2"
+              action="patients_app.action_server"/>
+-->
+  </data>
+</odoo>
